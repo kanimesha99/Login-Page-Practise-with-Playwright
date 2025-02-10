@@ -5,9 +5,18 @@ test.describe("Test Script for the Login Page",()=>{
 
   let Login;
 
+  test.beforeEach(async ({ page }) => {
+    Login = new LoginPage(page);    
+    await Login.gotoLoginPage();     
+  });
+
+  test.afterEach(async ({page}) => {
+    await page.close();  
+  });
+
   test("TC_001", async ({ page }) => {
-    Login = new LoginPage(page);
-    await Login.gotoLoginPage();
+    // Login = new LoginPage(page)
+    // await Login.gotoLoginPage();
     await Login.enterUsername('rahulshettyacademy');
     await Login.enterPassword('learning');
     await Login.pickRoleAsAdmin();
@@ -17,8 +26,8 @@ test.describe("Test Script for the Login Page",()=>{
   });
   
   test("TC_002", async ({ page }) => {
-    Login = new LoginPage(page);
-    await Login.gotoLoginPage();
+    // Login = new LoginPage(page);
+    // await Login.gotoLoginPage();
     await Login.enterUsername('rahulshetty123');
     await Login.enterPassword('learning');
     await Login.pickRoleAsAdmin();
@@ -28,8 +37,8 @@ test.describe("Test Script for the Login Page",()=>{
   });
 
   test("TC_003", async ({ page }) => {
-    Login = new LoginPage(page);
-    await Login.gotoLoginPage();
+    // Login = new LoginPage(page);
+    // await Login.gotoLoginPage();
     await Login.enterUsername('');
     await Login.enterPassword('learning');
     await Login.pickRoleAsAdmin();
@@ -39,8 +48,8 @@ test.describe("Test Script for the Login Page",()=>{
   });
   
   test("TC_004", async ({ page }) => {
-    Login = new LoginPage(page);
-    await Login.gotoLoginPage();
+    // Login = new LoginPage(page);
+    // await Login.gotoLoginPage();
     await Login.enterUsername('RAHULSHETTYACADEMY');
     await Login.enterPassword('learning');
     await Login.pickRoleAsAdmin();
@@ -50,8 +59,8 @@ test.describe("Test Script for the Login Page",()=>{
   });
 
   test("TC_005", async ({ page }) => {
-    Login = new LoginPage(page);
-    await Login.gotoLoginPage();
+    // Login = new LoginPage(page);
+    // await Login.gotoLoginPage();
     await Login.enterUsername('rahulshettyacademy');
     await Login.enterPassword('');
     await Login.pickRoleAsAdmin();
@@ -61,8 +70,8 @@ test.describe("Test Script for the Login Page",()=>{
   });
 
   test("TC_006", async ({ page }) => {
-    Login = new LoginPage(page);
-    await Login.gotoLoginPage();
+    // Login = new LoginPage(page);
+    // await Login.gotoLoginPage();
     await Login.enterUsername('rahulshettyacademy');
     await Login.enterPassword('learning123');
     await Login.pickRoleAsAdmin();
@@ -72,8 +81,8 @@ test.describe("Test Script for the Login Page",()=>{
   });
 
   test("TC_007", async ({ page }) => {
-    Login = new LoginPage(page);
-    await Login.gotoLoginPage();
+    // Login = new LoginPage(page);
+    // await Login.gotoLoginPage();
     await Login.enterUsername('rahulshetty123');
     await Login.enterPassword('learning123');
     await Login.pickRoleAsAdmin();
@@ -83,8 +92,8 @@ test.describe("Test Script for the Login Page",()=>{
   });
 
   test("TC_008", async ({ page }) => {
-    Login = new LoginPage(page);
-    await Login.gotoLoginPage();
+    // Login = new LoginPage(page);
+    // await Login.gotoLoginPage();
     await Login.enterUsername('');
     await Login.enterPassword('');
     await Login.pickRoleAsAdmin();
@@ -94,8 +103,8 @@ test.describe("Test Script for the Login Page",()=>{
   });
 
   test("TC_009", async ({ page }) => {
-    Login = new LoginPage(page);
-    await Login.gotoLoginPage();
+    // Login = new LoginPage(page);
+    // await Login.gotoLoginPage();
     await Login.enterUsername('rahulshettyacademy');
     await Login.enterPassword('learning');
     await Login.pickRoleAsUser();
@@ -106,8 +115,8 @@ test.describe("Test Script for the Login Page",()=>{
   });
 
   test("TC_010", async ({ page }) => {
-    Login = new LoginPage(page);
-    await Login.gotoLoginPage();
+    // Login = new LoginPage(page);
+    // await Login.gotoLoginPage();
     await Login.enterUsername('rahulshettyacademy');
     await Login.enterPassword('learning');
     await Login.pickRoleAsAdmin();
