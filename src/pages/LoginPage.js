@@ -1,6 +1,8 @@
 exports.LoginPage = class LoginPage {
   constructor(page) {
     this.page = page;
+
+    //Locators
     this.username_textbox = page.getByRole("textbox", { name: "Username:" });
     this.password_textbox = page.getByRole("textbox", { name: "Password:" });
     this.adminRole_checkbox = page.locator("(//span[@class='checkmark'])[1]");
@@ -20,7 +22,7 @@ exports.LoginPage = class LoginPage {
     );
   }
 
-  //Action methods
+  //Action Methods
   async gotoLoginPage() {
     await this.page.goto("https://rahulshettyacademy.com/loginpagePractise/");
   }
@@ -56,5 +58,4 @@ exports.LoginPage = class LoginPage {
   async acceptUserAlert() {
     await this.alert_box.click();
   }
-
 };
