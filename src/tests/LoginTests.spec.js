@@ -21,6 +21,7 @@ test.describe("Test Script for the Login Page", () => {
     await Login.pickRoleAsAdmin();
     await Login.selectAgreeButton();
     await Login.clickOnsubmit();
+    await page.waitForTimeout(5000);
     await expect(Login.home_text).toBeVisible();
   });
 
@@ -96,6 +97,7 @@ test.describe("Test Script for the Login Page", () => {
     await Login.acceptUserAlert();
     await Login.selectAgreeButton();
     await Login.clickOnsubmit();
+    await page.waitForTimeout(5000);
     await expect(Login.home_text).toBeVisible();
   });
 
